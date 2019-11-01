@@ -26,6 +26,7 @@ namespace ExcellentTaste.Models
         public int OrderID { get; set; }
         [Required]
         [Display(Name = "Tijd")]
+        [DataType(DataType.Time)]
         public DateTime Time { get; set; }
         [Required]
         [Display(Name = "Tafel nr.")]

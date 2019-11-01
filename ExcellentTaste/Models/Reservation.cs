@@ -20,8 +20,9 @@ namespace ExcellentTaste.Models
             LastName = rvm.LastName;
             PhoneNumber = rvm.PhoneNumber;
             ReservationBool = rvm.ReservationBool;
-            Start = rvm.Start;
-            End = rvm.End;
+            ReservationDate = rvm.ReservationDate;
+            StartTime = rvm.StartTime;
+            EndTime = rvm.EndTime;
         }
         [Key]
         public int ReservationID { get; set;}
@@ -39,11 +40,18 @@ namespace ExcellentTaste.Models
         [Display(Name = "Reservering")]
         public bool ReservationBool { get; set; }
         [Required]
-        [Display(Name = "Start")]
-        public DateTime Start { get; set; }
+        [Display(Name = "Reserveerdatum")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
+        public DateTime ReservationDate { get; set; }
         [Required]
-        [Display(Name = "Eind")]
-        public DateTime End { get; set; }
+        [Display(Name = "Starttijd")]
+        [DataType(DataType.Time)]
+        public DateTime StartTime { get; set; }
+        [Required]
+        [Display(Name = "Eindtijd")]
+        [DataType(DataType.Time)]
+        public DateTime EndTime { get; set; }
         [Required]
         [Display(Name = "Bestelling(en)")]
         public virtual ICollection<Order> Orders { get; set; }

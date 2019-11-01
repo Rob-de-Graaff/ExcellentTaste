@@ -51,6 +51,7 @@ namespace ExcellentTaste.Models
         public string Name { get; set; }
         [Required]
         [Display(Name = "Prijs")]
+        [DataType(DataType.Currency)]
         public double Price { get; set; }
         [Required]
         [Display(Name = "BTW")]
