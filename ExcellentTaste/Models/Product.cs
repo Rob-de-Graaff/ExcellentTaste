@@ -11,15 +11,7 @@ namespace ExcellentTaste.Models
     {
         [Display(Name = "Dranken")] Drink,
         [Display(Name = "Gerechten")] Food
-    }
-
-    public enum DishType
-    {
-        [Display(Name = "Voorgerecht")] Entree,
-        [Display(Name = "Warme Gerechten")] Hot,
-        [Display(Name = "Koude Gerechten")] Cold,
-        [Display(Name = "Nagerecht")] Dessert
-    }
+    } 
 
     public enum VAT
     {
@@ -44,9 +36,6 @@ namespace ExcellentTaste.Models
         [Display(Name = "Soort")]
         public ConsumableType ConsumableType { get; set; }
         [Required]
-        [Display(Name = "Type")]
-        public DishType DishType { get; set; }
-        [Required]
         [Display(Name = "Naam")]
         public string Name { get; set; }
         [Required]
@@ -56,8 +45,12 @@ namespace ExcellentTaste.Models
         [Required]
         [Display(Name = "BTW")]
         public VAT VAT { get; set; }
-
-        public Order Order { get; set; }
+        [Required]
+        [Display(Name = "beschikbaarheid")]
+        public bool availability { get; set;}
+        [Display(Name = "Categorie")]
+        public Category Category { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
     [NotMapped]
     public class ProductViewModel : Product

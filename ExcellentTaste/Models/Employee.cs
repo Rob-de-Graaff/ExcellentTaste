@@ -29,8 +29,8 @@ namespace ExcellentTaste.Models
             Role = evm.Role;
             FirstName = evm.FirstName;
             LastName = evm.LastName;
-            DateOfBirth = evm.DateOfBirth;
-            City = evm.City;
+            //DateOfBirth = evm.DateOfBirth;
+            //City = evm.City;
             Reservations = evm.Reservations;
         }
         
@@ -58,14 +58,14 @@ namespace ExcellentTaste.Models
         [NotMapped]
         [Display(Name = "Volledige Naam")]
         public string FullName { get { return $"{FirstName} {LastName}"; } }
-        [Required]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Date)]
-        [Display(Name = "Geboortedatum")]
-        public DateTime DateOfBirth { get; set; }
-        [Required]
-        [Display(Name = "Woonplaats")]
-        public string City { get; set; }
+        //[Required]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        //[Display(Name = "Geboortedatum")]
+        //public DateTime DateOfBirth { get; set; }
+        //[Required]
+        //[Display(Name = "Woonplaats")]
+        //public string City { get; set; }
 
         public virtual ICollection<Reservation> Reservations { get; set; }
     }
