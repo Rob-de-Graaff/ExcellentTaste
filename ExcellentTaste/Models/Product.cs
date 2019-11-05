@@ -50,6 +50,7 @@ namespace ExcellentTaste.Models
         public bool availability { get; set;}
         [Display(Name = "Categorie")]
         public Category Category { get; set; }
+
         public virtual ICollection<Order> Orders { get; set; }
     }
     [NotMapped]

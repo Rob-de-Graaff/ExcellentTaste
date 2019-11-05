@@ -18,8 +18,7 @@ namespace ExcellentTaste.Models
         { 
             OrderID = ovm.OrderID;
             Time = ovm.Time;
-            TableNumbers = ovm.TableNumbers;
-            Products = ovm.Products;
+            //TableNumbers = ovm.TableNumbers;
         }
 
         [Key]
@@ -28,15 +27,12 @@ namespace ExcellentTaste.Models
         [Display(Name = "Tijd")]
         [DataType(DataType.Time)]
         public DateTime Time { get; set; }
-        [Required]
-        [Display(Name = "Tafel nr.")]
-        public List<Table> TableNumbers { get; set; }
-        [Required]
-        [Display(Name = "Gerechten")]
-        public virtual ICollection<Product> Products { get; set; }
+        //[Required]
+        //[Display(Name = "Tafel nr.")]
+        //public List<Table> TableNumbers { get; set; }
 
         public Reservation Reservation { get; set; }
-        //public virtual ICollection<Product> Products { get; set;}
+        public virtual ICollection<Product> Products { get; set;}
     }
 
     [NotMapped]

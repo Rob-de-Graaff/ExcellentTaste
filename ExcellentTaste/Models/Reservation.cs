@@ -17,8 +17,7 @@ namespace ExcellentTaste.Models
         public Reservation(ReservationViewModel rvm)
         {
             ReservationID = rvm.ReservationID;
-            LastName = rvm.LastName;
-            PhoneNumber = rvm.PhoneNumber;
+            //LastName = rvm.LastName;
             ReservationBool = rvm.ReservationBool;
             ReservationDate = rvm.ReservationDate;
             StartTime = rvm.StartTime;
@@ -26,16 +25,13 @@ namespace ExcellentTaste.Models
         }
         [Key]
         public int ReservationID { get; set;}
-        [Required]
-        [Display(Name = "Achternaam")]
-        public string LastName { get; set; }
-        [Required]
-        [DataType(DataType.PhoneNumber)]
-        [Display(Name = "tel. nr.")]
-        public string PhoneNumber { get; set; }
-        [Required]
-        [Display(Name = "Tafel(s)")]
-        public virtual ICollection<Table> Tables { get; set; }
+        //[Required]
+        //[Display(Name = "Achternaam")]
+        //public string LastName { get; set; }
+        //[Required]
+        //[DataType(DataType.PhoneNumber)]
+        //[Display(Name = "tel. nr.")]
+        //public string PhoneNumber { get; set; }
         [Required]
         [Display(Name = "Reservering")]
         public bool ReservationBool { get; set; }
@@ -52,11 +48,11 @@ namespace ExcellentTaste.Models
         [Display(Name = "Eindtijd")]
         [DataType(DataType.Time)]
         public DateTime EndTime { get; set; }
-        [Required]
-        [Display(Name = "Bestelling(en)")]
-        public virtual ICollection<Order> Orders { get; set; }
 
         public Employee Employee { get; set; }
+        public Customer Customer { get; set; }
+        public virtual ICollection<Table> Tables { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
     [NotMapped]
     public class ReservationViewModel : Reservation
