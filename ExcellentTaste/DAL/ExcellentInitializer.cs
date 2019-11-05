@@ -21,16 +21,16 @@ namespace ExcellentTaste.DAL
 
             var Reservations = new List<Reservation>
             {
-                new Reservation{LastName="Klaasen", ReservationBool=true, ReservationDate=DateTime.Parse("2019-12-01"), StartTime=DateTime.ParseExact("18:00:00", "HH:mm;ss", CultureInfo.InvariantCulture), EndTime=DateTime.ParseExact("19:45:00", "HH:mm;ss", CultureInfo.InvariantCulture)},
-                new Reservation{LastName="Jansen", ReservationBool=false, ReservationDate=DateTime.Parse("2019-12-10"), StartTime=DateTime.ParseExact("19:15:00", "HH:mm;ss", CultureInfo.InvariantCulture), EndTime=DateTime.ParseExact("21:00:00", "HH:mm;ss", CultureInfo.InvariantCulture)},
+                //new Reservation{LastName="Klaasen", ReservationBool=true, ReservationDate=DateTime.Parse("2019-12-01"), StartTime=DateTime.ParseExact("18:00:00", "HH:mm;ss", CultureInfo.InvariantCulture), EndTime=DateTime.ParseExact("19:45:00", "HH:mm;ss", CultureInfo.InvariantCulture)},
+                //new Reservation{LastName="Jansen", ReservationBool=false, ReservationDate=DateTime.Parse("2019-12-10"), StartTime=DateTime.ParseExact("19:15:00", "HH:mm;ss", CultureInfo.InvariantCulture), EndTime=DateTime.ParseExact("21:00:00", "HH:mm;ss", CultureInfo.InvariantCulture)},
                 new Reservation{LastName="Haalstra", ReservationBool=true, ReservationDate=DateTime.Parse("2019-12-15"), StartTime=DateTime.ParseExact("18:15:00", "HH:mm;ss", CultureInfo.InvariantCulture), EndTime=DateTime.ParseExact("20:00:00", "HH:mm;ss", CultureInfo.InvariantCulture)},
                 new Reservation{LastName="Boers", ReservationBool=false, ReservationDate=DateTime.Parse("2020-01-10"), StartTime=DateTime.ParseExact("18:05:00", "HH:mm;ss", CultureInfo.InvariantCulture), EndTime=DateTime.ParseExact("19:50:00", "HH:mm;ss", CultureInfo.InvariantCulture)},
             };
 
             var Customers = new List<Customer>
             {
-                new Customer{LastName="Baarsen", PhoneNumber="0618432278", EmailAdress="cust@email.com"},
-                new Customer{LastName="Bosch", PhoneNumber="0695632278", EmailAdress="cust1@email.com"},
+                //new Customer{LastName="Baarsen", PhoneNumber="0618432278", EmailAdress="cust@email.com"},
+                //new Customer{LastName="Bosch", PhoneNumber="0695632278", EmailAdress="cust1@email.com"},
                 new Customer{LastName="Brock", PhoneNumber="0618439348", EmailAdress="cust2@email.com"},
                 new Customer{LastName="Roelofs", PhoneNumber="0653232278", EmailAdress="cust3@email.com"},
             };
@@ -60,6 +60,19 @@ namespace ExcellentTaste.DAL
                 CultureInfo.InvariantCulture),
                 EndTime = DateTime.ParseExact("19:45:00", "HH:mm;ss", CultureInfo.InvariantCulture)
             };
+
+            new Reservation 
+            {
+                Customer = new Customer
+                {
+                    LastName="Bosch", 
+                    PhoneNumber="0695632278", 
+                    EmailAdress="cust1@email.com"
+                },
+                ReservationBool = false, 
+                ReservationDate = DateTime.Parse("2019-12-10"), 
+                StartTime = DateTime.ParseExact("19:15:00", "HH:mm;ss", CultureInfo.InvariantCulture), 
+                EndTime = DateTime.ParseExact("21:00:00", "HH:mm;ss", CultureInfo.InvariantCulture) };
 
             //int i = 0;
             //foreach (var item in Reservations)

@@ -48,9 +48,8 @@ namespace ExcellentTaste.Models
         [Required]
         [Display(Name = "beschikbaarheid")]
         public bool availability { get; set;}
-        [Display(Name = "Categorie")]
-        public Category Category { get; set; }
 
+        public virtual Category Category { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
     [NotMapped]
