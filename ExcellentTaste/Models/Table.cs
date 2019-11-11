@@ -13,10 +13,7 @@ namespace ExcellentTaste.Models
         public Table()
         { }
 
-        public Table(TableViewModel tvm)
-        {
-
-        }
+        public Table(TableViewModel tvm) {}
         [Key]
         public int ID { get; set; }
         [Required]

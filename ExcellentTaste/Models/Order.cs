@@ -18,6 +18,7 @@ namespace ExcellentTaste.Models
         { 
             OrderID = ovm.OrderID;
             Time = ovm.Time;
+            Done = ovm.Done;
             //TableNumbers = ovm.TableNumbers;
         }
 
@@ -27,6 +28,9 @@ namespace ExcellentTaste.Models
         [Display(Name = "Tijd")]
         [DataType(DataType.Time)]
         public DateTime Time { get; set; }
+        [Required]
+        [Display(Name = "Bestelling klaar")]
+        public bool Done { get; set; }
         //[Required]
         //[Display(Name = "Tafel nr.")]
         //public List<Table> TableNumbers { get; set; }

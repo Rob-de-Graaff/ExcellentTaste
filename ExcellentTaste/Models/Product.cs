@@ -47,7 +47,7 @@ namespace ExcellentTaste.Models
         public VAT VAT { get; set; }
         [Required]
         [Display(Name = "beschikbaarheid")]
-        public bool availability { get; set;}
+        public bool Availability { get; set;}
 
         public virtual Category Category { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
