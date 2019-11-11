@@ -7,7 +7,7 @@ using System.Linq;
 namespace ExcellentTaste.DAL
 {
     public class ExcellentInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ExcellentContext>
-    {
+    {//test
         protected override void Seed(ExcellentContext context)
         {
             var Employees = new List<Employee>
