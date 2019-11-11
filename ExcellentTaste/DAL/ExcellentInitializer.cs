@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 
 namespace ExcellentTaste.DAL
 {
@@ -16,9 +17,12 @@ namespace ExcellentTaste.DAL
                 new Employee{EmailAdress="Kok@email.com", Password = "@3456C", FirstName = "Truus", LastName = "Tenten", Role = Role.Kok},
                 new Employee{EmailAdress="Barman@email.com", Password = "@4567D", FirstName = "Trien", LastName = "Trientjes", Role = Role.Barman}
             };
-            
-            context.Employees.AddRange(Employees);
-            context.SaveChanges();
+
+            if (context.Employees.Count()==0)
+            {
+                context.Employees.AddRange(Employees);
+                context.SaveChanges();
+            }
 
             var newTables = new List<Table>
             {
@@ -40,8 +44,11 @@ namespace ExcellentTaste.DAL
                 new Table{TableNumber="16"},
             };
 
-            context.Tables.AddRange(newTables);
-            context.SaveChanges();
+            if (context.Tables.Count() == 0)
+            {
+                context.Tables.AddRange(newTables);
+                context.SaveChanges();
+            }
 
             var newCategories = new List<Category>
             {
@@ -70,8 +77,12 @@ namespace ExcellentTaste.DAL
                     CategoryType = "Nagerecht"
                 }
             };
-            context.Categories.AddRange(newCategories);
-            context.SaveChanges();
+
+            if (context.Categories.Count() == 0)
+            {
+                context.Categories.AddRange(newCategories);
+                context.SaveChanges();
+            }
 
             var newProducts = new List<Product>
             {
@@ -104,8 +115,11 @@ namespace ExcellentTaste.DAL
                 new Product{ ConsumableType = ConsumableType.Food, Category = newCategories[5], Name = "Chocolademousse", Price = 5.50, VAT = VAT.Low, Availability = true},
             };
 
-            context.Products.AddRange(newProducts);
-            context.SaveChanges();
+            if (context.Products.Count() == 0)
+            {
+                context.Products.AddRange(newProducts);
+                context.SaveChanges();
+            }
 
             var newOrders = new List<Order>
             {
@@ -135,8 +149,11 @@ namespace ExcellentTaste.DAL
                 Time = DateTime.ParseExact("18:55:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
             };
 
-            context.Orders.AddRange(newOrders);
-            context.SaveChanges();
+            if (context.Orders.Count() == 0)
+            {
+                context.Orders.AddRange(newOrders);
+                context.SaveChanges();
+            }
 
             var newOrders2 = new List<Order>
             {
@@ -148,8 +165,11 @@ namespace ExcellentTaste.DAL
                 Time = DateTime.ParseExact("19:55:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
             };
 
-            context.Orders.AddRange(newOrders2);
-            context.SaveChanges();
+            if (context.Orders.Count() == 12)
+            {
+                context.Orders.AddRange(newOrders2);
+                context.SaveChanges();
+            }
 
             var newOrders3 = new List<Order>
             {
@@ -161,8 +181,11 @@ namespace ExcellentTaste.DAL
                 Time = DateTime.ParseExact("18:55:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
             };
 
-            context.Orders.AddRange(newOrders3);
-            context.SaveChanges();
+            if (context.Orders.Count() == 15)
+            {
+                context.Orders.AddRange(newOrders3);
+                context.SaveChanges();
+            }
 
             var newOrders4 = new List<Order>
             {
@@ -174,8 +197,11 @@ namespace ExcellentTaste.DAL
                 Time = DateTime.ParseExact("20:25:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
             };
 
-            context.Orders.AddRange(newOrders4);
-            context.SaveChanges();
+            if (context.Orders.Count() == 18)
+            {
+                context.Orders.AddRange(newOrders4);
+                context.SaveChanges();
+            }
 
             var Customers = new List<Customer>
             {
@@ -186,8 +212,12 @@ namespace ExcellentTaste.DAL
                     EmailAdress = "Standaard@email.com"
                 }
             };
-            context.Customers.AddRange(Customers);
-            context.SaveChanges();
+
+            if (context.Customers.Count() == 0)
+            {
+                context.Customers.AddRange(Customers);
+                context.SaveChanges();
+            }
 
             var Reservations = new List<Reservation>
             {
@@ -256,8 +286,12 @@ namespace ExcellentTaste.DAL
                     EndTime = DateTime.ParseExact("19:50:00", "HH:mm;ss", CultureInfo.InvariantCulture)
                 }
         };
-            Reservations.ForEach(s => context.Reservations.Add(s));
-            context.SaveChanges();
+
+            if (context.Reservations.Count() == 0)
+            {
+                Reservations.ForEach(s => context.Reservations.Add(s));
+                context.SaveChanges();
+            }
         }
     }
 }

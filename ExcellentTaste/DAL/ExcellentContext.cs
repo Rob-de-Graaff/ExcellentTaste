@@ -10,7 +10,6 @@ namespace ExcellentTaste.DAL
 {
     public class ExcellentContext : DbContext
     {
-        // test 4
         public ExcellentContext() : base("ExcellentContext")
         {
         }
