@@ -3,6 +3,16 @@
     padding-bottom: 20px;
 }
 
+.navbar-inverse {
+    background-color: #00919E;
+    border-color: #080808;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav li a {
+    color: white;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;

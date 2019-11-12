@@ -28,7 +28,12 @@ namespace ExcellentTaste.Models
 
         public Product(ProductViewModel pvm)
         {
-
+            this.ProductID = pvm.ProductID;
+            this.ConsumableType = pvm.ConsumableType;
+            this.Name = pvm.Name;
+            this.Price = pvm.Price;
+            this.VAT = pvm.VAT;
+            this.Availability = pvm.Availability;
         }
         [Key]
         public int ProductID { get; set; }
@@ -46,7 +51,7 @@ namespace ExcellentTaste.Models
         [Display(Name = "BTW")]
         public VAT VAT { get; set; }
         [Required]
-        [Display(Name = "beschikbaarheid")]
+        [Display(Name = "Beschikbaarheid")]
         public bool Availability { get; set;}
 
         public virtual Category Category { get; set; }
