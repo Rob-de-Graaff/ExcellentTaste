@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using ExcellentTaste.DAL;
+﻿using ExcellentTaste.DAL;
 using ExcellentTaste.Extensions;
 using ExcellentTaste.Models;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Net;
+using System.Web.Mvc;
 
 namespace ExcellentTaste.Controllers
 {
@@ -27,7 +24,7 @@ namespace ExcellentTaste.Controllers
                     TempList.Remove(product);
                 }
             }
-            return View(TempList);
+            return View(TempList as IEnumerable<Product>);
         }
 
         // GET: Product/Details/5
@@ -48,27 +45,47 @@ namespace ExcellentTaste.Controllers
         // GET: Product/Create
         public ActionResult Create()
         {
-            //Product prod = new Product();
-            return View(/*prod*/);
+            ProductViewModel prodvm = new ProductViewModel(new Product()) { ListCategories = new SelectList(db.Categories, "CategoryID", "CategoryType") };
+            //foreach (var category in db.Categories)
+            //{
+            //    prodvm.ListCategories.Add(new SelectListItem() { Value = category.CategoryID.ToString(), Text = category.CategoryType });
+            //}
+            //prod.listCategories = db.Categories.ToList();
+            return View(prodvm);
         }
 
         // POST: Product/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductID,ConsumableType,Name,Price,VAT,Availability")] Product product)
+        public ActionResult Create([Bind(Include = "ConsumableType,Name,Price,VAT,Availability")] Product product, Category category)
         {
-            product.Price = DoubleExtension.ConvertInput(Request.Form["PriceTextbox"]);
-
-            if (ModelState.IsValid)
+            try
             {
-                db.Products.Add(product);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    Category tempCat = db.Categories.Find(int.Parse(category.CategoryType));
+                    if (tempCat == null)
+                    {
+                        ModelState.AddModelError("", "Kan categorie niet vinden.");
+                        return RedirectToAction("Create");
+                    }
+
+                    product.Price = DoubleExtension.ConvertInput(Request.Form["PriceTextbox"]);
+                    product.Category = tempCat;
+                    db.Products.Add(product);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (DataException Dex)
+            {
+                ModelState.AddModelError("", "Kan de wijzigingen niet opslaan. Probeer het opnieuw en neem contact op met uw systeembeheerder als het probleem zich blijft voordoen.");
+                return View("Error", new HandleErrorInfo(Dex, "Product", "Create"));
             }
 
-            return View(product);
+            return RedirectToAction("Create");
         }
 
         // GET: Product/Edit/5
@@ -79,29 +96,52 @@ namespace ExcellentTaste.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = db.Products.Find(id);
-            if (product == null)
+            ProductViewModel pvm = new ProductViewModel(product) { ListCategories = new SelectList(db.Categories, "CategoryID", "CategoryType") };
+            if (pvm == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(pvm);
         }
 
         // POST: Product/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductID,ConsumableType,Name,Price,VAT,Availability")] Product product)
+        public ActionResult EditPost(Product product, Category category)
         {
-            product.Price = DoubleExtension.ConvertInput(Request.Form["PriceTextbox"]);
-
-            if (ModelState.IsValid)
+            if (product == null)
             {
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var tempProduct = db.Products.Find(product.ProductID);
+
+            try
+            {
+                Category tempCat = db.Categories.Find(int.Parse(category.CategoryType));
+                if (tempCat == null)
+                {
+                    ModelState.AddModelError("", "Kan categorie niet vinden.");
+                    return RedirectToAction("Edit");
+                }
+
+                tempProduct.Price = DoubleExtension.ConvertInput(Request.Form["PriceTextbox"]);
+                tempProduct.Category = tempCat;
+
+                if (TryUpdateModel(tempProduct, "", new string[] { "ConsumableType", "Name", "VAT", "Availability", "Category" }))
+                {
+                    db.SaveChanges();
+                }
+
                 return RedirectToAction("Index");
             }
-            return View(product);
+            catch (DataException Dex)
+            {
+                ModelState.AddModelError("", "Kan de wijzigingen niet opslaan. Probeer het opnieuw en neem contact op met uw systeembeheerder als het probleem zich blijft voordoen.");
+                return View("Error", new HandleErrorInfo(Dex, "Product", "Create"));
+            }
         }
 
         // GET: Product/Delete/5

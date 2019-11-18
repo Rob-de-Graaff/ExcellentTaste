@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ExcellentTaste.Models
 {
@@ -46,6 +47,7 @@ namespace ExcellentTaste.Models
         [Required]
         [Display(Name = "Prijs")]
         [DataType(DataType.Currency)]
+        //[DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = true)]
         public double Price { get; set; }
         [Required]
         [Display(Name = "BTW")]
@@ -60,5 +62,17 @@ namespace ExcellentTaste.Models
     [NotMapped]
     public class ProductViewModel : Product
     {
+        public ProductViewModel() { }
+        public ProductViewModel(Product product)
+        {
+            this.ProductID = product.ProductID;
+            this.ConsumableType = product.ConsumableType;
+            this.Name = product.Name;
+            this.Price = product.Price;
+            this.VAT = product.VAT;
+            this.Availability = product.Availability;
+        }
+
+        public SelectList ListCategories { get; set; }
     }
 }

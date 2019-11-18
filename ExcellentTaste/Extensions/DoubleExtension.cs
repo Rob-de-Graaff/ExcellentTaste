@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 
@@ -9,10 +10,9 @@ namespace ExcellentTaste.Extensions
     {
         public static double ConvertInput(string input)
         {
-            double resultDouble;
             input = input.Replace('.', ',');
 
-            if (!double.TryParse(input, out resultDouble))
+            if (!double.TryParse(input, out double resultDouble))
             {
                 resultDouble = 0.0;
             }
