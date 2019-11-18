@@ -26,5 +26,18 @@ namespace ExcellentTaste.Controllers
 
             return View();
         }
+
+        public ActionResult Category()
+        {
+
+
+            return View();
+
+        }
+
+        public ActionResult ChooseTableCustomer()
+        {
+            return View();
+        }
     }
 }

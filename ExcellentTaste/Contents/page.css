@@ -1,0 +1,178 @@
+﻿body {
+    background-color: black; 
+    overflow: hidden;
+}
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    
+}
+
+.allgroups {
+  width: 20%;
+  transform: translate(52%,-580%);
+}
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: deepskyblue;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  height:auto;
+  left: -.5%;
+  width:1555px; /* Full width */
+}
+
+.all-tables {
+    width: 30%;
+    transform: translateY(-3%);
+}
+
+.group1 {
+    transform: translateY(20%);
+}
+.group2 {
+
+}
+.group3 {
+  transform: translate(60%, -150%);
+}
+.group4 {
+    transform: translate(120%, -300%);
+}
+.group5 {
+   transform: translate(120%, -300%);
+}
+
+.group1row1table1 {
+ transform: translate(-20.5%,100%)
+}
+.group1row1table2 {
+}
+.group1row2table1 {
+ transform: translate(-20.5%,2%)
+}
+.group1row2table2 {
+ transform: translateY(-97.5%)
+}
+.group2row1table1 {
+ transform: translate(-20.5%,100%)
+}
+.group2row1table2 {
+}
+.group2row2table1 {
+    transform: translate(-20.5%,2%)
+}
+.group2row2table2 {
+    transform: translateY(-97.5%)
+}
+.group3row1table1 {
+    transform: translate(-20.5%,100%)
+}
+.group3row1table2 {
+}
+.group3row2table1 {
+    transform: translate(-20.5%,2%)
+}
+.group3row2table2 {
+    transform: translateY(-97.5%)
+}
+.group4row1table1 {
+    transform: translate(-20.5%,100%)
+}
+.group4row1table2 {
+}
+.group4row2table1 {
+    transform: translate(-20.5%,2%)
+}
+.group4row2table2 {
+    transform: translateY(-97.5%)
+}
+.group5row1table1 {
+    transform: translate(-20.5%,100%)
+}
+.group5row1table2 {
+}
+.group5row2table1 {
+    transform: translate(-20.5%,2%)
+}
+.group5row2table2 {
+    transform: translateY(-97.5%)
+}
+
+.TextCustomer {
+ color:deepskyblue;
+}
+
+.alterimagesize1 {
+    float: right;
+    transform: translate(20%,10%);
+    width: 25%;
+}
+
+.foodanddrinkicon {
+    transform: translateY(20%);
+}
+
+.alterimagesize2 {
+    float: right;
+    transform: translate(90%,10%);
+    width: 25%;
+}
+
+.logo {
+  float: left;
+  width: 30%;
+}
+/* Links inside the navbar */
+.navbar a {
+    float: right;
+    transform: translateX(-30%);
+    font-size: x-large;
+    font-weight: bold;
+    font-family: Verdana;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.selectgroup1 {
+}
+.selectgroup2 {
+    transform: translate(0,500%);
+}
+.selectgroup3 {
+    transform: translate(90%, 100%)
+}
+.selectgroup4 {
+   transform: translate(95%,280%)
+}
+.selectgroup5 {
+     transform: translate(95%, -400%)
+}
+   
+.TextCustomer {
+   color: blue;
+   font-size:xx-large;
+   transform: translate(50%,-4000%);
+   font-family: Verdana;
+   font-weight: bolder;
+}
+
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+
+
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
