@@ -1,0 +1,65 @@
+﻿@model ExcellentTaste.Models.Product
+@using ExcellentTaste.Extensions;
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsumableType)
+        </dt>
+
+        <dd>
+            @Model.ConsumableType.DisplayNameConsumableType()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VAT)
+        </dt>
+
+        <dd>
+            @Model.VAT.DisplayNameVAT()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Availability)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Availability)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Aanpassen", "Edit", new { id = Model.ProductID }) |
+    @Html.ActionLink("terug naar lijst", "Index")
+</p>

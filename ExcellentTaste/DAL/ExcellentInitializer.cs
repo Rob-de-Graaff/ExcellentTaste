@@ -124,29 +124,29 @@ namespace ExcellentTaste.DAL
             var newOrders = new List<Order>
             {
                 new Order{ Products = new List<Product> { newProducts[0], newProducts[1], newProducts[2], newProducts[3], newProducts[4], newProducts[5], newProducts[6], newProducts[7] }, 
-                Time = DateTime.ParseExact("18:00:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = true},
+                Time = DateTime.ParseExact("18:00:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = true},
                 new Order{ Products = new List<Product> { newProducts[11], newProducts[12], newProducts[13], newProducts[14], newProducts[15], newProducts[16], newProducts[17], newProducts[18] },
-                Time = DateTime.ParseExact("18:05:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = true},
+                Time = DateTime.ParseExact("18:05:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = true},
                 new Order{ Products = new List<Product> { newProducts[8], newProducts[9], newProducts[10], newProducts[11], newProducts[12], newProducts[13], newProducts[14], newProducts[15] },
-                Time = DateTime.ParseExact("18:10:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("18:10:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
                 new Order{ Products = new List<Product> { newProducts[0], newProducts[1], newProducts[2], newProducts[3], newProducts[4], newProducts[5], newProducts[6], newProducts[7] },
-                Time = DateTime.ParseExact("18:15:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("18:15:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
                 new Order{ Products = new List<Product> { newProducts[8], newProducts[9], newProducts[10], newProducts[11], newProducts[12], newProducts[13], newProducts[14], newProducts[15] },
-                Time = DateTime.ParseExact("18:20:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("18:20:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
                 new Order{ Products = new List<Product> { newProducts[11], newProducts[12], newProducts[13], newProducts[14], newProducts[15], newProducts[16], newProducts[17], newProducts[18] },
-                Time = DateTime.ParseExact("18:25:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("18:25:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
                 new Order{ Products = new List<Product> { newProducts[0], newProducts[1], newProducts[2], newProducts[3], newProducts[4], newProducts[5], newProducts[6], newProducts[7] },
-                Time = DateTime.ParseExact("18:30:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("18:30:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
                 new Order{ Products = new List<Product> { newProducts[8], newProducts[9], newProducts[10], newProducts[11], newProducts[12], newProducts[13], newProducts[14], newProducts[15] },
-                Time = DateTime.ParseExact("18:35:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("18:35:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
                 new Order{ Products = new List<Product> { newProducts[11], newProducts[12], newProducts[13], newProducts[14], newProducts[15], newProducts[16], newProducts[17], newProducts[18] },
-                Time = DateTime.ParseExact("18:40:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("18:40:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
                 new Order{ Products = new List<Product> { newProducts[0], newProducts[1], newProducts[2], newProducts[3], newProducts[4], newProducts[5], newProducts[6], newProducts[7] },
-                Time = DateTime.ParseExact("18:45:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("18:45:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
                 new Order{ Products = new List<Product> { newProducts[8], newProducts[9], newProducts[10], newProducts[11], newProducts[12], newProducts[13], newProducts[14], newProducts[15] },
-                Time = DateTime.ParseExact("18:50:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
-                new Order{Products = new List<Product> { newProducts[24], newProducts[25], newProducts[26], newProducts[27], newProducts[24], newProducts[25], newProducts[26], newProducts[27] },
-                Time = DateTime.ParseExact("18:55:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("18:50:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
+                new Order{Products = new List<Product> { newProducts[24], newProducts[25], newProducts[26], newProducts[17], newProducts[24], newProducts[25], newProducts[26], newProducts[25] },
+                Time = DateTime.ParseExact("18:55:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
             };
 
             if (context.Orders.Count() == 0)
@@ -158,11 +158,11 @@ namespace ExcellentTaste.DAL
             var newOrders2 = new List<Order>
             {
                 new Order{ Products = new List<Product> { newProducts[1], newProducts[2], newProducts[3], newProducts[4], newProducts[5], newProducts[6], newProducts[7], newProducts[8] },
-                Time = DateTime.ParseExact("19:15:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("19:15:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
                 new Order{ Products = new List<Product> { newProducts[12], newProducts[13], newProducts[14], newProducts[15] },
-                Time = DateTime.ParseExact("19:25:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
-                new Order{ Products = new List<Product> { newProducts[24], newProducts[25], newProducts[26], newProducts[27] },
-                Time = DateTime.ParseExact("19:55:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("19:25:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
+                new Order{ Products = new List<Product> { newProducts[24], newProducts[25], newProducts[26], newProducts[21] },
+                Time = DateTime.ParseExact("19:55:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
             };
 
             if (context.Orders.Count() == 12)
@@ -174,11 +174,11 @@ namespace ExcellentTaste.DAL
             var newOrders3 = new List<Order>
             {
                 new Order{ Products = new List<Product> { newProducts[2], newProducts[3], newProducts[4], newProducts[5], newProducts[6], newProducts[7], newProducts[8], newProducts[9] },
-                Time = DateTime.ParseExact("18:15:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("18:15:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
                 new Order{ Products = new List<Product> { newProducts[18], newProducts[19], newProducts[20], newProducts[21] },
-                Time = DateTime.ParseExact("18:25:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
-                new Order{ Products = new List<Product> { newProducts[24], newProducts[25], newProducts[26], newProducts[27] },
-                Time = DateTime.ParseExact("18:55:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("18:25:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
+                new Order{ Products = new List<Product> { newProducts[24], newProducts[25], newProducts[26], newProducts[22] },
+                Time = DateTime.ParseExact("18:55:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
             };
 
             if (context.Orders.Count() == 15)
@@ -190,11 +190,11 @@ namespace ExcellentTaste.DAL
             var newOrders4 = new List<Order>
             {
                 new Order{ Products = new List<Product> { newProducts[2], newProducts[3], newProducts[4], newProducts[5], newProducts[6], newProducts[7], newProducts[8], newProducts[9] },
-                Time = DateTime.ParseExact("19:50:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("19:50:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
                 new Order{ Products = new List<Product> { newProducts[18], newProducts[19], newProducts[20], newProducts[21] },
-                Time = DateTime.ParseExact("19:55:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
-                new Order{ Products = new List<Product> { newProducts[24], newProducts[25], newProducts[26], newProducts[27] },
-                Time = DateTime.ParseExact("20:25:00", "HH:mm;ss", CultureInfo.InvariantCulture), Done = false},
+                Time = DateTime.ParseExact("19:55:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
+                new Order{ Products = new List<Product> { newProducts[24], newProducts[25], newProducts[26], newProducts[17] },
+                Time = DateTime.ParseExact("20:25:00", "HH:mm:ss", CultureInfo.InvariantCulture), Done = false},
             };
 
             if (context.Orders.Count() == 18)
@@ -233,9 +233,9 @@ namespace ExcellentTaste.DAL
                     Orders = new List<Order> { newOrders[0], newOrders[1], newOrders[2], newOrders[3], newOrders[4], newOrders[5], newOrders[6], newOrders[7], newOrders[8], newOrders[9], newOrders[10], newOrders[11]},
                     ReservationBool = true,
                     ReservationDate = DateTime.Parse("2019-10-01"),
-                    StartTime = DateTime.ParseExact("18:00:00", "HH:mm;ss",
+                    StartTime = DateTime.ParseExact("18:00:00", "HH:mm:ss",
                     CultureInfo.InvariantCulture),
-                    EndTime = DateTime.ParseExact("19:45:00", "HH:mm;ss", CultureInfo.InvariantCulture)
+                    EndTime = DateTime.ParseExact("19:45:00", "HH:mm:ss", CultureInfo.InvariantCulture)
                 },
 
                 new Reservation
@@ -250,8 +250,8 @@ namespace ExcellentTaste.DAL
                     Orders = new List<Order> { newOrders[0], newOrders[1], newOrders[2] },
                     ReservationBool = false,
                     ReservationDate = DateTime.Parse("2019-12-10"),
-                    StartTime = DateTime.ParseExact("19:15:00", "HH:mm;ss", CultureInfo.InvariantCulture),
-                    EndTime = DateTime.ParseExact("21:00:00", "HH:mm;ss", CultureInfo.InvariantCulture)
+                    StartTime = DateTime.ParseExact("19:15:00", "HH:mm:ss", CultureInfo.InvariantCulture),
+                    EndTime = DateTime.ParseExact("21:00:00", "HH:mm:ss", CultureInfo.InvariantCulture)
                 },
 
                 new Reservation
@@ -266,8 +266,8 @@ namespace ExcellentTaste.DAL
                     Orders = new List<Order> { newOrders[0], newOrders[1], newOrders[2] },
                     ReservationBool = true,
                     ReservationDate = DateTime.Parse("2019-12-15"),
-                    StartTime = DateTime.ParseExact("18:15:00", "HH:mm;ss", CultureInfo.InvariantCulture),
-                    EndTime = DateTime.ParseExact("20:00:00", "HH:mm;ss", CultureInfo.InvariantCulture)
+                    StartTime = DateTime.ParseExact("18:15:00", "HH:mm:ss", CultureInfo.InvariantCulture),
+                    EndTime = DateTime.ParseExact("20:00:00", "HH:mm:ss", CultureInfo.InvariantCulture)
                 },
 
                 new Reservation
@@ -282,8 +282,8 @@ namespace ExcellentTaste.DAL
                     Orders = new List<Order> { newOrders[0], newOrders[1], newOrders[2] },
                     ReservationBool = false,
                     ReservationDate = DateTime.Parse("2020-01-10"),
-                    StartTime = DateTime.ParseExact("18:05:00", "HH:mm;ss", CultureInfo.InvariantCulture),
-                    EndTime = DateTime.ParseExact("19:50:00", "HH:mm;ss", CultureInfo.InvariantCulture)
+                    StartTime = DateTime.ParseExact("18:05:00", "HH:mm:ss", CultureInfo.InvariantCulture),
+                    EndTime = DateTime.ParseExact("19:50:00", "HH:mm:ss", CultureInfo.InvariantCulture)
                 }
         };
 
